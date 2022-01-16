@@ -19,7 +19,7 @@ Parameters:
 - name: snippets.include_custom_menu
   description: "Include custom menu content parsed from JSON string below"
   input_type: checkbox
-  default: false
+  default: true
 
 - name: snippets.custom_menu_content
   description: |
@@ -75,47 +75,47 @@ Parameters:
 - name: snippets.include_submenu.numpy
   description: "Include numpy sub-menu"
   input_type: checkbox
-  default: true
+  default: false
 
 - name: snippets.include_submenu.scipy
   description: "Include scipy sub-menu"
   input_type: checkbox
-  default: true
+  default: false
 
 - name: snippets.include_submenu.matplotlib
   description: "Include matplotlib sub-menu"
   input_type: checkbox
-  default: true
+  default: false
 
 - name: snippets.include_submenu.sympy
   description: "Include sympy sub-menu"
   input_type: checkbox
-  default: true
+  default: false
 
 - name: snippets.include_submenu.pandas
   description: "Include pandas sub-menu"
   input_type: checkbox
-  default: true
+  default: false
 
 - name: snippets.include_submenu.astropy
   description: "Include astropy sub-menu"
   input_type: checkbox
-  default: true
+  default: false
 
 - name: snippets.include_submenu.h5py
   description: "Include h5py sub-menu"
   input_type: checkbox
-  default: true
+  default: false
 
 - name: snippets.include_submenu.numba
   description: "Include numba sub-menu"
   input_type: checkbox
-  default: true
+  default: false
 
 - name: snippets.include_submenu.python
   description: "Include python sub-menu"
   input_type: checkbox
-  default: true
+  default: false
 
 - name: snippets.include_submenu.markdown
   description: "Include markdown sub-menu"

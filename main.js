@@ -3,38 +3,45 @@ define([
     "jquery",
     "base/js/namespace",
     "./snippets_submenu_python",
-    "./snippets_submenu_markdown",
-], function (require, $, Jupyter, python, markdown) {
+    "./snippets_submenu_JPSL",
+    "./snippets_submenu_markdown"
+], function (require, $, Jupyter, python, JPSL, markdown) {
     "use strict";
 
-    var mod_name = 'snippets_menu';
+    var mod_name = 'JPSLsnippets_menu';
     var mod_log_prefix = mod_name + '[' + mod_name + ']';
 
     var python_menus = [
         python.numpy,
-        python.scipy,
-        python.matplotlib,
-        python.sympy,
-        python.pandas,
-        python.astropy,
-        python.h5py,
-        python.numba,
-        python.python,
+        //python.scipy,
+        //python.matplotlib,
+        //python.sympy,
+        python.pandas
+        //python.astropy,
+        //python.h5py,
+        //python.numba,
+        //python.python,
+    ];
+
+    var JPSL_menus = [
+        JPSL.instructor,
+        JPSL.pandasGUI,
+        JPSL.JupyterPiDAQ
     ];
 
     var default_menus = [
         {
-            'name' : 'Snippets',
+            'name' : 'JPSL Snippets',
             'sub-menu-direction' : 'left',
-            'sub-menu' : python_menus.concat([markdown]),
-        },
+            'sub-menu' : JPSL_menus.concat([python_menus.concat([markdown])])
+        }
     ];
     var options = {
         sibling: undefined, // if undefined, set by cfg.sibling_selector
-        menus : [],
+        menus : default_menus,
         hooks: {
             pre_config: undefined,
-            post_config: undefined,
+            post_config: undefined
         }
     };
 
@@ -48,13 +55,13 @@ define([
         "h5py",
         "numba",
         "python",
-        "markdown",
+        "markdown"
     ];
     // default parameters
     var cfg = {
         insert_as_new_cell: false,
         insert_before_sibling: false,
-        include_custom_menu: false,
+        include_custom_menu: true,
         include_submenu: {}, // default set after this definition
         sibling_selector: '#help_menu',
         top_level_submenu_goes_left: true,
@@ -85,7 +92,7 @@ define([
         })
     };
     for (var ii=0; ii< includable_submenu_keys.length; ii++) {
-        cfg.include_submenu[includable_submenu_keys[ii]] = true;
+        cfg.include_submenu[includable_submenu_keys[ii]] = false;
     }
 
     function config_loaded_callback () {
@@ -109,8 +116,8 @@ define([
                 {
                     'name' : 'Snippets',
                     'sub-menu-direction' : cfg.top_level_submenu_goes_left ? 'left' : 'right',
-                    'sub-menu' : [],
-                },
+                    'sub-menu' : []
+                }
             ];
 
             if (cfg.include_custom_menu) {
@@ -286,7 +293,7 @@ define([
         default_menus : default_menus,
 
         // Items that could be useful for customization
-        options : options,
+        options : options
     };
 
 });

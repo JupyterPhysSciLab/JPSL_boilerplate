@@ -4,7 +4,6 @@ define({
         {
             'name' : 'Setup',
             'snippet' : [
-                'from __future__ import print_function, division',
                 'import pandas as pd',
             ],
         },
@@ -29,13 +28,13 @@ define({
                 {
                     'name' : 'Read from CSV',
                     'snippet'  : [
-                        'bp_data = pd.read_csv("path/to/file.csv", header=1, delim_whitespace=True)',
+                        '?dataframe_name? = pd.read_csv("?path/to/file?.csv", header=1)',
                     ],
                 },
 
                 {
                     'name' : 'Write to CSV',
-                    'snippet' : ['bp_data.to_csv("path/to/new_file.csv", sep=" ", header=False, index=False)',],
+                    'snippet' : ['?dataframe_name?.to_csv("?path/to/new_file?.csv", sep=",", header=False, index=False)',],
                 },
             ],
         },
@@ -45,34 +44,35 @@ define({
             'sub-menu' : [
                 {
                     'name' : 'Filter out NaNs',
-                    'snippet' : ['bp_data = bp_data.dropna()',],
+                    'snippet' : ['?dataframe_name? = ?dataframe_name?.dropna()',],
                 },
                 
                 {
                     'name' : 'Replace NaNs with number',
-                    'snippet' : ['bp_data = bp_data.fillna(0.0)',],
+                    'snippet' : ['?dataframe_name? = ?dataframe_name?.fillna(0.0)',],
                 },
             ],
         },
 
         {
             'name' : 'Select rows',
-            'snippet' : ['bp_data[:5]',],
+            'snippet' : ['?dataframe_name?[:5]',],
         },
 
         {
             'name' : 'Select by column',
-            'snippet' : ['bp_column = bp_data[["Column name"]]',],
+            'snippet' : ['?var_name? = ?dataframe_name?[["Column name"]]',],
             'sub-menu' : [
                 {
                     'name' : 'Select single column',
-                    'snippet' : ['bp_column = bp_data[["Column name"]]',],
+                    'snippet' : ['?var_name? = ?dataframe_name?[["Column name"]]',],
                 },
                 
                 {
                     'name' : 'Select multiple columns',
                     'snippet'  : [
-                        'bp_columns = bp_data[["Column name 1", "Column name 2", "Column name 3"]]',],
+                        '?new_frame_name? = ?dataframe_name?[["Column name 1", "Column name 2", "Column name 3"]]',
+                        ],
                 },
             ],
         },
