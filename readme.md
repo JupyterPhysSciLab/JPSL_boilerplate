@@ -1,5 +1,11 @@
-Jupyter notebook snippets menu
-==============================
+# Jupyter Physical Sciences Snippets Menu
+This is a version of [jupyter_boilerplate](https://github.com/moble/jupyter_boilerplate)
+with the menus trimmed extensively and initialization snippets for various JPSL
+tools added.
+
+Below is the contents of the readme from the original notebook extension.
+
+# Jupyter notebook snippets menu
 
 Adds a customizable menu item to Jupyter notebooks to insert
 snippets, boilerplate, and examples of code.
