@@ -12,7 +12,7 @@ define([
             },
             {
                 'name' : 'Documentation',
-                'external-link' : 'https://github.com/JupyterPhysSciLab/jupyter_Pandas_GUI/blob/master/README.md',
+                'external-link' : 'https://jupyterphysscilab.github.io/jupyter_Pandas_GUI/',
             },
             {
                 'name' : 'New Calculated Column GUI',
