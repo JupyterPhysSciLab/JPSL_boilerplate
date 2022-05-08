@@ -1,15 +1,15 @@
 define([
     "require",
 ], function (require) {
-
-    var insertruncount = 0;
-    var newrunstr = 'fig$ = go.FigureWidget() # Create figure to show data.\n';
-    newrunstr += 'newRun(fig$) # Initiate run setup.\n';
-    newrunstr += 'fig$ # Display the live figure.';
-
     function insertnewRun(){
-        insertruncount += 1;
-        var cmdstr = newrunstr.replaceAll('$',insertruncount);
+        var execstr="len(runs)"
+        JPSLUtils.executePython(execstr).then(result => newRunCMD(result));
+    }
+    function newRunCMD(listlen){
+        var newrunstr = 'fig$ = go.FigureWidget() # Create figure to show data.\n';
+        newrunstr += 'newRun(fig$) # Initiate run setup.\n';
+        newrunstr += 'fig$ # Display the live figure.';
+        var cmdstr = newrunstr.replaceAll('$',listlen);
         return(cmdstr);
     }
     return {

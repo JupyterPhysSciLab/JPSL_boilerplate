@@ -26,6 +26,12 @@ define([
                     'plot_pandas_GUI()',
                 ],
             },
+            {
+                'name' : 'Fit Pandas Data GUI',
+                'snippet' : [
+                    'fit_pandas_GUI()',
+                ],
+            },
 
         ]
     }
