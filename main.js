@@ -295,6 +295,4 @@ define([
         // Items that could be useful for customization
         options : options
     };
-
-
 });

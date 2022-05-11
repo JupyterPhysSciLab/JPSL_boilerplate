@@ -32,8 +32,7 @@ define([
                     'fit_pandas_GUI()',
                 ],
             },
-
-        ]
+        ],
     }
 }
 );

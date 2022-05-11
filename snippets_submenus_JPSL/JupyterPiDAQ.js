@@ -2,28 +2,19 @@ define([
     "require",
     "base/js/namespace",
 ], function (require, Jupyter) {
-    function executePython(python) {
-        return new Promise((resolve, reject) => {
-            var callbacks = {
-                iopub: {
-                    output: (data) => resolve(data.content.text.trim())
-                }
-        };
-        Jupyter.notebook.kernel.execute(`print(${python})`, callbacks);
-    });
-};
 
-    function insertnewRun(){
-        var execstr="len(runs)";
-        executePython(execstr).then(result => newRunCMD(result));
-    }
-    function newRunCMD(listlen){
+    function newRunCMD(){
         var newrunstr = 'fig$ = go.FigureWidget() # Create figure to show data.\n';
         newrunstr += 'newRun(fig$) # Initiate run setup.\n';
         newrunstr += 'fig$ # Display the live figure.';
-        var cmdstr = newrunstr.replaceAll('$',listlen);
+        if (!Jupyter.PiDAQruncount){
+            Jupyter.PiDAQruncount = 0;
+        }
+        Jupyter.PiDAQruncount+=1;
+        var cmdstr = newrunstr.replaceAll('$',Jupyter.PiDAQruncount);
         return(cmdstr);
     }
+
     return {
         'name' : 'JupyterPiDAQ',
         'sub-menu' : [
@@ -40,10 +31,10 @@ define([
             {
                 'name' : 'New Run',
                 'snippet' : [
-                    insertnewRun(),
+                    newRunCMD(),
                 ],
             },
 
-        ]
+        ],
     }
 });
