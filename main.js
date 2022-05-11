@@ -212,6 +212,18 @@ define([
             $('<i class="fa fa-external-link menu-icon pull-right"/>').appendTo(a);
             $('<span/>').html(menu_item_spec.name).appendTo(a);
         }
+        else if (menu_item_spec.hasOwnProperty('live-snippet')) {
+            var callstr = menu_item_spec['live-snippet'];
+            /*if (typeof callstr == 'string' || callstr instanceof String) {
+                callstr = [callstr];
+            }*/
+            a.attr({
+                'title' : "", // Do not remove this, even though it's empty!
+                'data-snippet-code' : callstr.join('\n'),
+            })
+            .on('click', callstr)
+            .addClass('snippet');
+        }
 
         if (menu_item_spec.hasOwnProperty('sub-menu')) {
             element
