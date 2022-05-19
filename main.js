@@ -31,7 +31,7 @@ define([
 
     var default_menus = [
         {
-            'name' : 'JPSL Snippets',
+            'name' : 'JPSL Help',
             'sub-menu-direction' : 'left',
             'sub-menu' : JPSL_menus.concat([python_menus.concat([markdown])])
         }
@@ -263,13 +263,13 @@ define([
                 menu_element.children('a')
                     .addClass('dropdown-toggle')
                     .attr({
-                        'data-toggle' : 'dropdown',
+               menu_element         'data-toggle' : 'dropdown',
                         'aria-expanded' : 'false'
                     });
             }
 
             // Insert the menu element into DOM
-            menu_element[insert_before_sibling ? 'insertBefore': 'insertAfter'](sibling);
+            [insert_before_sibling ? 'insertBefore': 'insertAfter'](sibling);
 
             // Make sure MathJax will typeset this menu
             window.MathJax.Hub.Queue(["Typeset", window.MathJax.Hub, menu_element[0]]);

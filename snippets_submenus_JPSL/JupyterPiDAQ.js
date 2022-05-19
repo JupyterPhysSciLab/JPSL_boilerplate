@@ -1,7 +1,6 @@
 define([
     "require",
     "base/js/namespace",
-    "./newRunCMD",
 ], function (requirejs, Jupyter, newRunCMD) {
 
     return {
@@ -17,13 +16,6 @@ define([
                 'name' : 'Documentation',
                 'external-link' : 'https://jupyterphysscilab.github.io/JupyterPiDAQ/',
             },
-            {
-                'name' : 'New Run',
-                'live-snippet' : [
-                    'newRunCMD.newRunCMD()',
-                ],
-            },
-
         ],
     }
 });
