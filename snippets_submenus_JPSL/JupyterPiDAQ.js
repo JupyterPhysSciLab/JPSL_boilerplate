@@ -1,7 +1,6 @@
 define([
     "require",
-    "base/js/namespace",
-], function (requirejs, Jupyter, newRunCMD) {
+], function (requirejs) {
 
     return {
         'name' : 'JupyterPiDAQ',
