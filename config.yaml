@@ -1,14 +1,15 @@
 Type: Jupyter Notebook Extension
-Name: Snippets Menu
+Name: JPSL Help Menu
 Link: readme.md
 Description: |
-  Add a customizable menu item to insert code and markdown snippets.
-  Comes with extensive defaults for popular python modules, including fairly
-  complete listings of many important functions and constants, to save
-  searching through documentation.
+  Based on Jupyter Snippets Menu. This provides links to documentation to parts
+  of the Jupyter Physical Science Lab suite of packages and python snippets for
+  initializing key packages and launching some GUI elements. Can be extended in
+  the Nbextensions tab to show some of the default submenus from the original
+  Jupyter Snippets Menu.
 Main: main.js
-Icon: thumbnail.png
-Compatibility: 4.x
+Icon: JPSLHelpMenu.png
+Compatibility: 4.x, 5.x
 Parameters:
 
 - name: snippets.insert_as_new_cell

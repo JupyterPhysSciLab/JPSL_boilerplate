@@ -8,7 +8,7 @@ define([
 ], function (require, $, Jupyter, python, JPSL, markdown) {
     "use strict";
 
-    var mod_name = 'JPSLsnippets_menu';
+    var mod_name = 'JPSLHelp_menu';
     var mod_log_prefix = mod_name + '[' + mod_name + ']';
 
     var python_menus = [
@@ -24,9 +24,9 @@ define([
     ];
 
     var JPSL_menus = [
-        JPSL.instructor,
         JPSL.pandasGUI,
-        JPSL.JupyterPiDAQ
+        JPSL.JupyterPiDAQ,
+        JPSL.instructor
     ];
 
     var default_menus = [
