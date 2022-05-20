@@ -263,13 +263,13 @@ define([
                 menu_element.children('a')
                     .addClass('dropdown-toggle')
                     .attr({
-               menu_element         'data-toggle' : 'dropdown',
+                        'data-toggle' : 'dropdown',
                         'aria-expanded' : 'false'
                     });
             }
 
             // Insert the menu element into DOM
-            [insert_before_sibling ? 'insertBefore': 'insertAfter'](sibling);
+            menu_element[insert_before_sibling ? 'insertBefore': 'insertAfter'](sibling);
 
             // Make sure MathJax will typeset this menu
             window.MathJax.Hub.Queue(["Typeset", window.MathJax.Hub, menu_element[0]]);
