@@ -213,6 +213,11 @@ define([
             $('<span/>').html(menu_item_spec.name).appendTo(a);
         }
         else if (menu_item_spec.hasOwnProperty('live-snippet')) {
+        /*
+        This does not really work because the code that needs to run when
+        the user selects the menu item is unavailable to the menu initiated
+        javascript call. Somehow need to expose the code.
+        */
             var callstr = menu_item_spec['live-snippet'];
             /*if (typeof callstr == 'string' || callstr instanceof String) {
                 callstr = [callstr];
